@@ -24,7 +24,7 @@ from copy import copy
 import video
 from common import anorm2, draw_str
 from time import sleep
-
+from shutil import rmtree as remove
 lk_params = dict( winSize  = (15, 15),
                   maxLevel = 1,
                   criteria = (cv.TERM_CRITERIA_EPS | cv.TERM_CRITERIA_COUNT, 10, 0.03))
@@ -196,6 +196,7 @@ def main():
         video_src = 0
 
     App(video_src).run()
+    remove("./__pycache__")
     print('Done')
 
 
